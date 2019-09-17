@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  leave_approval: MyString
+  start_date: 2019-09-16 05:54:23
+  end_date: 2019-09-16 05:54:23
+  in_meeting: MyString
+  string: MyString
+  out_of_office: MyString
+
+two:
+  leave_approval: MyString
+  start_date: 2019-09-16 05:54:23
+  end_date: 2019-09-16 05:54:23
+  in_meeting: MyString
+  string: MyString
+  out_of_office: MyString

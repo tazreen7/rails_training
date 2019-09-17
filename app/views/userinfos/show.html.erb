@@ -1,0 +1,31 @@
+<h1> Associate </h1>
+<%= form_for @userinfo do |f| %>
+
+<div>
+    <%= f.label :leave_approval %><br>
+    <%= f.text_field :leave_approval %><br>
+
+    <%= f.label :start_date %><br>
+    <%= f.date_field :start_date%><br>
+
+    <%= f.label :end_date %><br>
+    <%= f.date_field :end_date%><br>
+
+   
+
+    <div class="form_row">
+    <label for="in_meeting">In meeting:</label> <% [ 'Yes', 'No' ].each do |in_meeting| %>
+      <br><%= radio_button_tag 'in_meeting', in_meeting, @in_meeting == in_meeting %>
+      <%= in_meeting.humanize %>
+    <% end %>
+</div>
+<div class="form_row">
+<label for="out_of_office">Out Of Office:</label> <% [ 'Yes', 'No' ].each do |out_of_office| %>
+  <br><%= radio_button_tag 'out_of_office', out_of_office, @out_of_office == out_of_office %>
+  <%= out_of_office.humanize %>
+<% end %>
+</div>
+    <%= f.submit "Submit" %>
+  </div>
+  
+  <%end%>
