@@ -1,0 +1,15 @@
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/node_modules
+/yarn-error.log
+*.sqlite
+*.log
+log/development.log
+tmp/cache/bootsnap-load-path-cache
+db/development.sqlite3
