@@ -1,23 +1,17 @@
 Rails.application.routes.draw do
-	resources :userinfos
-  get 'pages/secret'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'users#new'
-   get 'userinfos/userinfo'
-	get 'users/new' => 'users#new', as: :new_user
-	post 'users' => 'users#create'
-	
-	# ----- add these lines here: -----
-	
-	# log in page with form:
-	get '/login'     => 'sessions#new'
-	
-	# create (post) action for when log in form is submitted:
-	post '/login'    => 'sessions#create'
-	
-	# delete action to log out:
-	delete '/logout' => 'sessions#destroy'  
-  	 get '/sessions/index'
-  	# ----- end of added lines -----
+   root to: 'associates#index'
+post 'show', :to => 'associate#show'
+  devise_for :users
+  get 'welcome/index'
+  get 'associates/edit'
+  get 'associates/index'
+    get  'sessions/new'
+    devise_scope :user do
+      get 'users/sign_in', to: 'devise/sessions#new'
+      get 'users/sign_up', to: 'devise/registrations#new'
+      get 'users/sign_out', to: 'devise/sessions#destroy'
+    end
+resource:associate do
 end
-
+end
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
